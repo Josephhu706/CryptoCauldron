@@ -14,6 +14,9 @@ import TableHead from '@mui/material/TableHead';
 import CircularProgress from '@mui/material/CircularProgress'
 import TableRow from '@mui/material/TableRow';
 import Pagination from '@mui/material/Pagination';
+import logo from '../assets/images/logo.svg'
+import callError from '../assets/images/call-error.svg'
+import emptySearch from '../assets/images/empty-search.svg'
 
 
 const darkTheme = createTheme({
@@ -23,7 +26,7 @@ const darkTheme = createTheme({
 });
 
 
-const Home = () => {
+const CoinTable = () => {
     const [coins, setCoins] = useState<Coin[]>([])
     const [search, setSearch] = useState<string>('')
     const [loading, setLoading] = useState(false)
@@ -58,15 +61,16 @@ const Home = () => {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline/>
           <Container style={{textAlign: "center"}}>
-            <Typography color="common.white" variant='h4' style={{margin:18, fontFamily:"Montserrat"}}>
-              Cryptocurrency Prices
+              <img src={logo} style={{"height": "8em", "marginTop":"2em"}}  alt="logo"/>
+            <Typography color="common.white" variant='h5' style={{margin:18, fontFamily:"Montserrat"}}>
+              Cook up the Crypto Cauldron
             </Typography>
             <TextField onChange={handleChange} id="outlined-basic" label="Search for Coin Name or Symbol" variant="outlined" style={{marginBottom:20, width:"80%"}}/>
             <TableContainer>
               {loading? (
                 <CircularProgress />        
-              ):(error? <h1>OOPS Something Went Wrong</h1>:( filterCoins().length === 0 ? 
-              <h1>oops nothing found</h1> :
+              ):(error? <img src={callError} style={{"height": "20em"}} alt="fetchError"/>:( filterCoins().length === 0 ? 
+              <img src={emptySearch} style={{"height": "20em"}} alt="emptySearch"/>:
                 <Table>
                   <TableHead style={{backgroundColor: "#EEBC1D"}}>
                     <TableRow>
@@ -123,16 +127,19 @@ const Home = () => {
                 </Table>
               )
               )}
-              <Pagination style={{padding:20, width:"100%%" , display:"flex", justifyContent:"center"}} 
-              count={parseInt((filterCoins().length / 10).toFixed(0))} color="primary"
-              onChange={(event, value) => {
-                setPage(value);
-                window.scroll(0, 450);
-              }} />
+              {!error && 
+                <Pagination style={{padding:20, width:"100%%" , display:"flex", justifyContent:"center"}} 
+                count={parseInt((filterCoins().length / 10).toFixed(0))} color="primary"
+                onChange={(event, value) => {
+                  setPage(value);
+                  window.scroll(0, 450);
+                }} />
+              }
+
             </TableContainer>
           </Container>
       </ThemeProvider>
     )
 }
 
-export default Home
+export default CoinTable
