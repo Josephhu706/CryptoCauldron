@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import '../App.css';
 import {fetchCrypto, Coin} from '../config/API'
-import CoinInfo from '../components/CoinInfo'
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Container } from '@mui/system';
 import { CssBaseline } from '@mui/material/';
 import Typography from '@mui/material/Typography';
@@ -13,7 +12,6 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
 import CircularProgress from '@mui/material/CircularProgress'
 import TableRow from '@mui/material/TableRow';
 import Pagination from '@mui/material/Pagination';
@@ -82,11 +80,10 @@ const Home = () => {
                   </TableHead>
                   <TableBody>
                     {filterCoins().slice((page - 1) * 10, (page - 1) * 10 + 10).map((row, index)=>{
-                      const profit = row.price_change_percentage_24h > 0
                       return(
                         <TableRow key={index}>
                           <TableCell scope="row" style={{display: "flex", gap:15}}>
-                            <img src={row.image} height="50" style={{marginBottom:10}}/>
+                            <img src={row.image} height="50" style={{marginBottom:10}} alt={row.name}/>
                             <div style={{display:"flex", flexDirection:"column"}}>
                               <span
                                 style={{
