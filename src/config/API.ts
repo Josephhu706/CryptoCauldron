@@ -42,9 +42,10 @@ export const TrendingCoins = () =>
 `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=gecko_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h`;
 
 export const fetchCrypto = async ()=>{
-
+    //put page not found 
     const endpoint = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
     const {data} = await axios.get(endpoint)
+    console.log(data)
     return data
 
 }

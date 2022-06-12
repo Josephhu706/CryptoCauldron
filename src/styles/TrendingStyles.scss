@@ -1,0 +1,162 @@
+:root {
+    --font-base: "Montserrat", sans-serif;
+    --primary-color: #EDF7F6;
+    --secondary-color: #014C57;
+    --black-color: #030303;
+    --lightGray-color: #C1DBD9;
+    --gray-color: #7AA19D;
+    --brown-color: #AF3E4D;
+    --white-color: #FFFFFF;
+    --secondary-color-hover: #002F36;
+}
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__header{
+    //on a large screen, show in a row
+    padding: 6rem 2rem 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__header-circlesTop3{
+    flex: 0.75;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-left: 1rem;
+    max-width: 960px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    div{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--white-color);
+        box-shadow: 0 0 20px rgba(0 , 0 , 0 , 0.1);
+        img{
+            width: 60%;
+            height: 60%;
+        }
+    }
+    //targetting the first child of the icon circles
+    div:nth-child(1){
+        width: 100px;
+        height: 100px; 
+    }
+    //different circles positioned differntly
+    div:nth-child(2){
+        margin-top: 3em;
+        width: 90px;
+        height: 90px; 
+    }
+    div:nth-child(3){
+        margin-bottom: 5em;
+        width: 90px;
+        height: 90px; 
+    }
+}
+
+.app__header-circlesTop7{
+    flex: 0.75;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-left: 1rem;
+    max-width: 960px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    div{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--white-color);
+        box-shadow: 0 0 20px rgba(0 , 0 , 0 , 0.1);
+        img{
+            width: 60%;
+            height: 60%;
+        }
+    }
+    //targetting the first child of the icon circles
+    div:nth-child(1){
+        width: 80px;
+        height: 80px; 
+    }
+    //different circles positioned differntly
+    div:nth-child(2){
+        margin-top: 5em;
+        width: 80px;
+        height: 80px; 
+    }
+    div:nth-child(3){
+        margin-bottom: 5em;
+        width: 80px;
+        height: 80px; 
+    }
+    div:nth-child(4){
+        margin-bottom: 5em;
+        width: 80px;
+        height: 80px; 
+    }
+}
+
+.app__header-circlesTop10{
+    flex: 0.75;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-left: 1rem;
+    max-width: 960px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: 0;
+
+    div{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--white-color);
+        box-shadow: 0 0 20px rgba(0 , 0 , 0 , 0.1);
+        img{
+            width: 60%;
+            height: 60%;
+        }
+    }
+    //targetting the first child of the icon circles
+    div:nth-child(1){
+        width: 70px;
+        height: 70px; 
+    }
+    //different circles positioned differntly
+    div:nth-child(2){
+        margin: 1rem;
+        width: 70px;
+        height: 70px; 
+    }
+    div:nth-child(3){
+        width: 70px;
+        height: 70px; 
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0;
+        div{
+            margin: 1rem;
+        }
+    }
+}
