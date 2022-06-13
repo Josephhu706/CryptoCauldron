@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
 :root {
-    --font-base: "Montserrat", sans-serif;
     --primary-color: #EDF7F6;
     --secondary-color: #014C57;
     --black-color: #030303;
@@ -8,6 +8,11 @@
     --brown-color: #AF3E4D;
     --white-color: #FFFFFF;
     --secondary-color-hover: #002F36;
+}
+.trendingTitle{
+    padding-top: 3%;
+    display:flex;
+    justify-content: center;
 }
 .app__flex {
     display: flex;
@@ -37,6 +42,7 @@
     margin-left: 0;
 
     div{
+        cursor: pointer;
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -48,36 +54,66 @@
         }
     }
     //targetting the first child of the icon circles
-    div:nth-child(1){
+    div:nth-child(1) .circle-cmp{
         width: 100px;
         height: 100px; 
     }
     //different circles positioned differntly
-    div:nth-child(2){
+    div:nth-child(2).circle-cmp{
         margin-top: 3em;
-        width: 90px;
-        height: 90px; 
+        width: 100px;
+        height: 100px; 
     }
-    div:nth-child(3){
+    div:nth-child(3).circle-cmp{
         margin-bottom: 5em;
-        width: 90px;
-        height: 90px; 
+        width: 100px;
+        height: 100px; 
+    }
+    .circle-cmp{
+        position:relative;
+    }
+    .overlay{
+        background-color: #FFDD2B;
+        font-family: 'Metamorphous', cursive;
+        position: absolute;
+        top:-10px;
+        left:-10px;
+        width:40px;
+        height:40px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rank{
+        color:black;
+    }
+    .coinName{
+        position:absolute;
+        color:var(--white-color);
+        height: 40px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        top:100px;
+        background: rgba(0,0,0,0.0);
+
     }
 }
 
 .app__header-circlesTop7{
+    margin-top: 4%;
     flex: 0.75;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     height: 100%;
-    margin-left: 1rem;
     max-width: 960px;
     width: 100%;
     flex-wrap: wrap;
     margin-left: 0;
 
     div{
+        cursor: pointer;
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -89,29 +125,59 @@
         }
     }
     //targetting the first child of the icon circles
-    div:nth-child(1){
+    div:nth-child(1).circle-cmp{
         width: 80px;
         height: 80px; 
     }
     //different circles positioned differntly
-    div:nth-child(2){
+    div:nth-child(2).circle-cmp{
         margin-top: 5em;
         width: 80px;
         height: 80px; 
     }
-    div:nth-child(3){
+    div:nth-child(3).circle-cmp{
         margin-bottom: 5em;
         width: 80px;
         height: 80px; 
     }
-    div:nth-child(4){
+    div:nth-child(4).circle-cmp{
         margin-bottom: 5em;
         width: 80px;
         height: 80px; 
+    }
+    .circle-cmp{
+        position:relative;
+    }
+    .overlay{
+        background-color: #FFDD2B;
+        font-family: 'Metamorphous', cursive;
+        position: absolute;
+        top:-15px;
+        left:-20px;
+        width:40px;
+        height:40px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rank{
+        color:black;
+    }
+    .coinName{
+        position:absolute;
+        color:var(--white-color);
+        height: 30px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        top:85px;
+        background: rgba(0,0,0,0.0);
+
     }
 }
 
 .app__header-circlesTop10{
+    margin-top: 7%;
     flex: 0.75;
     display: flex;
     flex-direction: row;
@@ -124,6 +190,7 @@
     margin-left: 0;
 
     div{
+        cursor: pointer;
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -135,28 +202,50 @@
         }
     }
     //targetting the first child of the icon circles
-    div:nth-child(1){
+    div:nth-child(1).circle-cmp{
         width: 70px;
         height: 70px; 
     }
     //different circles positioned differntly
-    div:nth-child(2){
+    div:nth-child(2).circle-cmp{
         margin: 1rem;
         width: 70px;
         height: 70px; 
     }
-    div:nth-child(3){
+    div:nth-child(3).circle-cmp{
         width: 70px;
         height: 70px; 
     }
-
-    @media screen and (max-width: 1200px) {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-left: 0;
-        div{
-            margin: 1rem;
-        }
+    .circle-cmp{
+        position:relative;
     }
+    .overlay{
+        background-color: #FFDD2B;
+        font-family: 'Metamorphous', cursive;
+        position: absolute;
+        top:-20px;
+        left:-10px;
+        width:40px;
+        height:40px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rank{
+        color:black;
+    }
+    .coinName{
+        position:absolute;
+        color:var(--white-color);
+        height: 40px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        top:70px;
+        background: rgba(0,0,0,0.0);
+
+    }
+}
+.animation{
+    margin-bottom:3%;
 }

@@ -9,6 +9,7 @@ import animationData from '../assets/images/cauldron.json';
 import CircularProgress from '@mui/material/CircularProgress'
 import callError from '../assets/images/call-error.svg'
 import Typography from '@mui/material/Typography';
+import MotionWrap from '../wrapper/MotionWrap'
 
 const darkTheme = createTheme({
     palette: {
@@ -16,16 +17,6 @@ const darkTheme = createTheme({
     },
 });
 
-const scaleVariants = {
-    whileInView:{
-      scale: [0,1],
-      opacity: [0, 1],
-      transition:{
-        duration: 2,
-        ease: 'easeInOut'
-      }
-    }
-  }
   
 const Trending = () => {
     const [trending, setTrending] = useState<Coin[]>([])
@@ -51,69 +42,94 @@ const Trending = () => {
     }
       
   return (
-    <div className='app__header app__flex' data-testid='TrendingPage'>
-        <Typography color="common.white" variant='h4' style={{margin:18, fontFamily:"Montserrat"}}>
-                Trending Coins By Volume
-        </Typography>
-        <ThemeProvider theme={darkTheme}>
-          <CssBaseline/>
-          {loading?(
-            <CircularProgress data-testid='loading' />   
-          ):(error? 
-            <div data-testid='fetchError'>
-                <img src={callError} style={{"height": "20em"}} alt="fetchError"/>
+    <div data-testid='trendingPage'>
+      <Typography className="trendingTitle" color="common.white" variant='h4' style={{margin:18, fontFamily:"Montserrat"}}>
+        Top 10 Trending Coins By Volume
+      </Typography>
+      <div className='app__header app__flex' data-testid='TrendingPage'>
+          <ThemeProvider theme={darkTheme}>
+            <CssBaseline/>
+            {loading?(
+              <CircularProgress data-testid='loading' />   
+            ):(error? 
+              <div data-testid='fetchError'>
+                  <img src={callError} style={{"height": "20em"}} alt="fetchError"/>
+              </div>
+            :
+            <div>
+            <motion.div 
+            initial={{ y:300, opacity:0}}
+            animate={{y: -10, opacity:1}}
+            transition={{delay:0.2, type:'tween', duration:2}}
+            viewport={{ once: true }}
+            className="app__header-circlesTop3"
+            >
+                {trending.slice(0,3).map((circle, index)=>(
+                <motion.div 
+                whileInView={{opacity: 1}}
+                whileHover={{scale: 1.2}}
+                transition= {{duration: 0.5, type: 'tween'}}
+                className="circle-cmp top3 app__flex" key={`circle-${index}`}>
+                  <div className='overlay'><h3 className="rank">{index+1}</h3></div>
+                  <img src={circle.image} alt="circle" />
+                  <div className='coinName'>{circle.name}</div>
+                </motion.div>
+                ))}
+            </motion.div>
+            <motion.div 
+            initial={{ y:300, opacity:0}}
+            animate={{y: -10, opacity:1}}
+            transition={{delay:0.3, type:'tween', duration:2}}
+            viewport={{ once: true }}
+            className="app__header-circlesTop7"
+            >
+                {trending.slice(3,7).map((circle, index)=>(
+                <motion.div 
+                whileInView={{opacity: 1}}
+                whileHover={{scale: 1.2}}
+                transition= {{duration: 0.5, type: 'tween'}}
+                className="circle-cmp app__flex" key={`circle-${index}`}>
+                  <div className='overlay'><h3 className="rank">{index+4}</h3></div>
+                  <img src={circle.image} alt="circle" />
+                  <div className='coinName'>{circle.name}</div>
+                </motion.div>
+                ))}
+            </motion.div>
+            <motion.div 
+            initial={{ y:300, opacity:0}}
+            animate={{y: -10, opacity:1}}
+            transition={{delay:0.6, type:'tween', duration:2}}
+            viewport={{ once: true }}
+            className="app__header-circlesTop10"
+            >
+                {trending.slice(7).map((circle, index)=>(
+                <motion.div 
+                whileInView={{opacity: 1}}
+                whileHover={{scale: 1.2}}
+                transition= {{duration: 0.5, type: 'tween'}}
+                className="circle-cmp app__flex" key={`circle-${index}`}>
+                  <div className='overlay'><h3 className="rank">{index+8}</h3></div>
+                  <img src={circle.image} alt="circle" />
+                  <div className='coinName'>{circle.name}</div>
+                </motion.div>
+                ))}
+            </motion.div>
+          <div data-testid='animation'>
+            <Lottie
+              className='animation'
+              loop
+              animationData={animationData}
+              play
+              style={{ width: 720, height: 400 }}
+              />
             </div>
-          :
-          <div>
-          <motion.div 
-          variants={scaleVariants}
-          whileInView={scaleVariants.whileInView}
-          viewport={{ once: true }}
-          className="app__header-circlesTop3"
-          >
-              {trending.slice(0,3).map((circle, index)=>(
-              <div className="circle-cmp app__flex" key={`circle-${index}`}>
-              <img src={circle.image} alt="circle" />
-              </div>
-              ))}
-          </motion.div>
-          <motion.div 
-          variants={scaleVariants}
-          whileInView={scaleVariants.whileInView}
-          viewport={{ once: true }}
-          className="app__header-circlesTop7"
-          >
-              {trending.slice(3,7).map((circle, index)=>(
-              <div className="circle-cmp app__flex" key={`circle-${index}`}>
-              <img src={circle.image} alt="circle" />
-              </div>
-              ))}
-          </motion.div>
-          <motion.div 
-          variants={scaleVariants}
-          whileInView={scaleVariants.whileInView}
-          viewport={{ once: true }}
-          className="app__header-circlesTop10"
-          >
-              {trending.slice(7).map((circle, index)=>(
-              <div className="circle-cmp app__flex" key={`circle-${index}`}>
-              <img src={circle.image} alt="circle" />
-              </div>
-              ))}
-          </motion.div>
-
-          <Lottie
-          loop
-          animationData={animationData}
-          play
-          style={{ width: 720, height: 500 }}
-          />
+        </div>
+      
+      )}
+          </ThemeProvider>
       </div>
-    )}
-       
-        </ThemeProvider>
     </div>
   )
 }
 
-export default Trending
+export default MotionWrap(Trending)

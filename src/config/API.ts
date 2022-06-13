@@ -29,17 +29,6 @@ export type Coin = {
     last_updated: string;
 }
 
-export const CoinList = () =>
-`https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
-
-export const SingleCoin = (id:number) =>
-`https://api.coingecko.com/api/v3/coins/${id}`;
-
-export const HistoricalChart = (id:number, days = 365) =>
-`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=aud&days=${days}`;
-
-export const TrendingCoins = () =>
-`https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=gecko_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h`;
 
 export const fetchCrypto = async ()=>{
     //put page not found 
@@ -48,4 +37,18 @@ export const fetchCrypto = async ()=>{
     console.log(data)
     return data
 
+}
+
+export const fetchCoin = async (id:string) => {
+    const endpoint = `https://api.coingecko.com/api/v3/coins/${id}`
+    const {data} = await axios.get(endpoint)
+    console.log(data)
+    return data
+}
+
+export const fetchHistory = async (id:string, days:number = 365) => {
+    const endpoint = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=aud&days=${days}`
+    const {data} = await axios.get(endpoint)
+    console.log(data)
+    return data
 }

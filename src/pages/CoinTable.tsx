@@ -15,6 +15,7 @@ import Pagination from '@mui/material/Pagination';
 import callError from '../assets/images/call-error.svg'
 import emptySearch from '../assets/images/empty-search.svg'
 import SearchInput from '../components/SearchInput';
+import MotionWrap from '../wrapper/MotionWrap'
 
 
 const darkTheme = createTheme({
@@ -144,4 +145,4 @@ const CoinTable = () => {
     )
 }
 
-export default CoinTable
+export default MotionWrap(CoinTable)

@@ -2,195 +2,199 @@
 
 exports[`matches snapshot 1`] = `
 <div
-  data-testid="coinTable"
+  style={Object {}}
 >
   <div
-    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
-    style={
-      Object {
-        "textAlign": "center",
-      }
-    }
+    data-testid="coinTable"
   >
-    <div>
-      <div
-        data-testid="tableLogo"
-      >
-        <img
-          alt="logo"
-          src="logo.svg"
-          style={
-            Object {
-              "height": "8em",
-              "marginTop": "2em",
-            }
-          }
-        />
-        <h5
-          className="MuiTypography-root MuiTypography-h5 css-1m67wze-MuiTypography-root"
-          style={
-            Object {
-              "fontFamily": "Montserrat",
-              "margin": 18,
-            }
-          }
-        >
-          Cook up Coins in the Crypto Cauldron
-        </h5>
-      </div>
-      <div
-        className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
-        data-testid="search"
-        style={
-          Object {
-            "marginBottom": 20,
-            "width": "80%",
-          }
+    <div
+      className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+      style={
+        Object {
+          "textAlign": "center",
         }
-      >
-        <label
-          className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-rb5gc9-MuiFormLabel-root-MuiInputLabel-root"
-          data-shrink={false}
-          htmlFor="outlined-basic"
-          id="outlined-basic-label"
-        >
-          Search for Coin Name or Symbol
-        </label>
+      }
+    >
+      <div>
         <div
-          className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-px39cz-MuiInputBase-root-MuiOutlinedInput-root"
-          onClick={[Function]}
+          data-testid="tableLogo"
         >
-          <input
-            aria-invalid={false}
-            autoFocus={false}
-            className="MuiOutlinedInput-input MuiInputBase-input css-p51h6s-MuiInputBase-input-MuiOutlinedInput-input"
-            data-testid="content-input"
-            disabled={false}
-            id="outlined-basic"
-            onAnimationStart={[Function]}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onFocus={[Function]}
-            required={false}
-            type="text"
+          <img
+            alt="logo"
+            src="logo.svg"
+            style={
+              Object {
+                "height": "8em",
+                "marginTop": "2em",
+              }
+            }
           />
-          <fieldset
-            aria-hidden={true}
-            className="MuiOutlinedInput-notchedOutline css-9425fu-MuiOutlinedInput-notchedOutline"
+          <h5
+            className="MuiTypography-root MuiTypography-h5 css-1m67wze-MuiTypography-root"
+            style={
+              Object {
+                "fontFamily": "Montserrat",
+                "margin": 18,
+              }
+            }
           >
-            <legend
-              className="css-1ftyaf0"
+            Cook up Coins in the Crypto Cauldron
+          </h5>
+        </div>
+        <div
+          className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          data-testid="search"
+          style={
+            Object {
+              "marginBottom": 20,
+              "width": "80%",
+            }
+          }
+        >
+          <label
+            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-rb5gc9-MuiFormLabel-root-MuiInputLabel-root"
+            data-shrink={false}
+            htmlFor="outlined-basic"
+            id="outlined-basic-label"
+          >
+            Search for Coin Name or Symbol
+          </label>
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-px39cz-MuiInputBase-root-MuiOutlinedInput-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              autoFocus={false}
+              className="MuiOutlinedInput-input MuiInputBase-input css-p51h6s-MuiInputBase-input-MuiOutlinedInput-input"
+              data-testid="content-input"
+              disabled={false}
+              id="outlined-basic"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              required={false}
+              type="text"
+            />
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-9425fu-MuiOutlinedInput-notchedOutline"
             >
-              <span>
-                Search for Coin Name or Symbol
-              </span>
-            </legend>
-          </fieldset>
+              <legend
+                className="css-1ftyaf0"
+              >
+                <span>
+                  Search for Coin Name or Symbol
+                </span>
+              </legend>
+            </fieldset>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      className="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
-    >
       <div
-        data-testid="emptySearch"
+        className="MuiTableContainer-root css-rorn0c-MuiTableContainer-root"
       >
-        <img
-          alt="emptySearch"
-          src="empty-search.svg"
+        <div
+          data-testid="emptySearch"
+        >
+          <img
+            alt="emptySearch"
+            src="empty-search.svg"
+            style={
+              Object {
+                "height": "20em",
+              }
+            }
+          />
+        </div>
+        <nav
+          aria-label="pagination navigation"
+          className="MuiPagination-root MuiPagination-text css-1oj2twp-MuiPagination-root"
+          data-testid="pagination"
           style={
             Object {
-              "height": "20em",
+              "display": "flex",
+              "justifyContent": "center",
+              "padding": 20,
+              "width": "100%%",
             }
           }
-        />
-      </div>
-      <nav
-        aria-label="pagination navigation"
-        className="MuiPagination-root MuiPagination-text css-1oj2twp-MuiPagination-root"
-        data-testid="pagination"
-        style={
-          Object {
-            "display": "flex",
-            "justifyContent": "center",
-            "padding": 20,
-            "width": "100%%",
-          }
-        }
-      >
-        <ul
-          className="MuiPagination-ul css-wjh20t-MuiPagination-ul"
         >
-          <li>
-            <button
-              aria-label="Go to previous page"
-              className="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-previousNext css-rij76b-MuiButtonBase-root-MuiPaginationItem-root"
-              disabled={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onDragLeave={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex={-1}
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
-                data-testid="NavigateBeforeIcon"
-                focusable="false"
-                viewBox="0 0 24 24"
+          <ul
+            className="MuiPagination-ul css-wjh20t-MuiPagination-ul"
+          >
+            <li>
+              <button
+                aria-label="Go to previous page"
+                className="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-previousNext css-rij76b-MuiButtonBase-root-MuiPaginationItem-root"
+                disabled={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={-1}
+                type="button"
               >
-                <path
-                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                />
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button
-              aria-label="Go to next page"
-              className="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-previousNext css-rij76b-MuiButtonBase-root-MuiPaginationItem-root"
-              disabled={true}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onContextMenu={[Function]}
-              onDragLeave={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={[Function]}
-              onMouseDown={[Function]}
-              onMouseLeave={[Function]}
-              onMouseUp={[Function]}
-              onTouchEnd={[Function]}
-              onTouchMove={[Function]}
-              onTouchStart={[Function]}
-              tabIndex={-1}
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
-                data-testid="NavigateNextIcon"
-                focusable="false"
-                viewBox="0 0 24 24"
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                  data-testid="NavigateBeforeIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button
+                aria-label="Go to next page"
+                className="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-textPrimary Mui-disabled MuiPaginationItem-previousNext css-rij76b-MuiButtonBase-root-MuiPaginationItem-root"
+                disabled={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex={-1}
+                type="button"
               >
-                <path
-                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-                />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </nav>
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                  data-testid="NavigateNextIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </div>

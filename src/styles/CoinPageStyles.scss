@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.coinPageContainer{
+    display: flex;
+
+    .coinImage{
+        margin-top: 5%;
+        margin-bottom: 20px;
+    }
+    .coinDescription{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .headingName{
+        font-weight: bold;
+        font-family: 'Metamorphous', cursive;
+        margin-bottom: 20px;
+    }
+    .marketDataContent{
+        font-family: 'Montserrat', sans-serif;
+    }
+    @media only screen and (max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.sideBar{
+    width: 30%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    border-right: 2px solid grey;
+
+    @media only screen and (max-width: 900px) {
+        width: 100%
+    }
+
+}
+
+.coinChart{
+    display:flex;
+}
