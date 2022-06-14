@@ -29,6 +29,12 @@ export type Coin = {
     last_updated: string;
 }
 
+export type Timeline = {
+    label: string,
+    value: number,
+
+}
+
 
 export const fetchCrypto = async ()=>{
     //put page not found 

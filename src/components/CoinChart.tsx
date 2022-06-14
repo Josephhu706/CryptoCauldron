@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {fetchHistory} from '../config/API'
+import {fetchHistory, Timeline} from '../config/API'
 import CircularProgress from '@mui/material/CircularProgress'
 import callError from '../assets/images/call-error.svg'
 import Typography from '@mui/material/Typography';
@@ -7,6 +7,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material/';
 import '../styles/CoinChartStyles.scss'
 import {Line} from 'react-chartjs-2'
+import Button from '@mui/material/Button';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -43,9 +45,28 @@ const CoinChart:React.FC<Props> = ({coin}) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>('')
   const [history, setHistory] = useState<any>([])
-  const [days, setDays] = useState<number>(365)
+  const [days, setDays] = useState<number>(1)
   const coinPrice = [];
   const coinTimestamp = [];
+  const chartTimelines = [
+    {
+      label: "24 Hours",
+      value: 1,
+    },
+    {
+      label: "30 Days",
+      value: 30,
+    },
+    {
+      label: "3 Months",
+      value: 90,
+    },
+    {
+      label: "1 Year",
+      value: 365,
+    },
+  ];
+
 
   useEffect(() => {
     getHistory(coin, days)
@@ -62,26 +83,14 @@ const CoinChart:React.FC<Props> = ({coin}) => {
     setLoading(false)
   }
 
-  for (let i = 0; i < history?.data?.history?.length; i++) {
-    coinTimestamp.push(
-      new Date(history.data.history[i].timestamp).toLocaleDateString()
-    );
-    coinPrice.push(history.data.history[i].price);
-  }
-
-  const data = {
-    labels: coinTimestamp,
-    datasets: [
-      {
-        label: 'Price in AUD',
-        data: coinPrice,
-        fill: false,
-        backgroundColor: '#0071bd',
-        borderColor: '#0071bd',
-      },
-    ],
-  };
-  
+  const lineData = history.map((coin:Array<number>)=>{
+    let date = new Date(coin[0]);
+    let time =
+      date.getHours() > 12
+        ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+        : `${date.getHours()}:${date.getMinutes()} AM`;
+    return days === 1 ? time : date.toLocaleDateString();
+  })
 
 
   return (
@@ -89,33 +98,39 @@ const CoinChart:React.FC<Props> = ({coin}) => {
       <ThemeProvider theme={darkTheme}>
           <CssBaseline/>
           <div className='container'>
+            <h1>Coin Price Data</h1>
           {loading? (
-                  <CircularProgress data-testid='loading' />        
+                  <CircularProgress className="loadingProgress" data-testid='loading' />        
                 ):(error? 
-                <div data-testid='fetchError'>
+                <div data-testid='fetchError'className="fetchError">
                   <img src={callError} style={{"height": "20em"}} alt="fetchError"/>
                 </div>
                 :(
-                <div data-testid='coinChart' className='coinChart'>
-                  <Line data={{labels: history.map((coin:Array<number>)=>{
-                     let date = new Date(coin[0]);
-                     let time =
-                       date.getHours() > 12
-                         ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                         : `${date.getHours()}:${date.getMinutes()} AM`;
-                     return days === 1 ? time : date.toLocaleDateString();
-                  }),
-                  datasets:[
-                    {
-                      data: history.map((coin:any) => coin[1]),
-                      label: `Price ( Past ${days} Days ) in AUD`,
-                      borderColor: "#EEBC1D",
-                    },
-                  ],
-                  }} />
-
-
+                  <>
+                  <div data-testid='coinChart' className='coinChart'>
+  
+                    <Line data={{labels: lineData,
+                    datasets:[
+                      {
+                        data: history.map((coin:any) => coin[1]),
+                        label: `Price ( Past ${days} Days ) in AUD`,
+                        borderColor: "#EEBC1D",
+                      },
+                    ],
+                    }} />
+                  </div>
+                  <div className='coinChartButtons'>
+                  {chartTimelines.map((timeline, index)=>{
+                    return(
+                      <span key={index}>
+                        <Button className="chartButton" onClick={()=>{setDays(timeline.value)}} variant="outlined">
+                          {timeline.label}
+                        </Button>
+                      </span>
+                    )
+                  })}
                 </div>
+                </>
                 )
                 )}
           </div>

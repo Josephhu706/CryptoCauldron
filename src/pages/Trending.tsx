@@ -10,6 +10,7 @@ import CircularProgress from '@mui/material/CircularProgress'
 import callError from '../assets/images/call-error.svg'
 import Typography from '@mui/material/Typography';
 import MotionWrap from '../wrapper/MotionWrap'
+import {useNavigate} from "react-router-dom";
 
 const darkTheme = createTheme({
     palette: {
@@ -22,6 +23,8 @@ const Trending = () => {
     const [trending, setTrending] = useState<Coin[]>([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string>('')
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         getCoins()
@@ -66,6 +69,7 @@ const Trending = () => {
             >
                 {trending.slice(0,3).map((circle, index)=>(
                 <motion.div 
+                onClick={()=>navigate(`/coins/${circle.id}`)}
                 whileInView={{opacity: 1}}
                 whileHover={{scale: 1.2}}
                 transition= {{duration: 0.5, type: 'tween'}}
@@ -85,6 +89,7 @@ const Trending = () => {
             >
                 {trending.slice(3,7).map((circle, index)=>(
                 <motion.div 
+                onClick={()=>navigate(`/coins/${circle.id}`)}
                 whileInView={{opacity: 1}}
                 whileHover={{scale: 1.2}}
                 transition= {{duration: 0.5, type: 'tween'}}
@@ -104,6 +109,7 @@ const Trending = () => {
             >
                 {trending.slice(7).map((circle, index)=>(
                 <motion.div 
+                onClick={()=>navigate(`/coins/${circle.id}`)}
                 whileInView={{opacity: 1}}
                 whileHover={{scale: 1.2}}
                 transition= {{duration: 0.5, type: 'tween'}}

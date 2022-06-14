@@ -9,6 +9,9 @@ import '../styles/CoinPageStyles.scss'
 import callError from '../assets/images/call-error.svg'
 import Typography from '@mui/material/Typography';
 import parse from 'html-react-parser';
+import Button from '@mui/material/Button';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import {useNavigate} from "react-router-dom";
 
 const darkTheme = createTheme({
   palette: {
@@ -22,6 +25,8 @@ const CoinPage = () => {
   const [search, setSearch] = useState<string>('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>('')
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCoin(id)
@@ -47,13 +52,17 @@ const CoinPage = () => {
           {loading? (
                   <CircularProgress data-testid='loading' />        
                 ):(error? 
-                <div data-testid='fetchError'>
+                <div data-testid='fetchError' className="fetchError">
                   <img src={callError} style={{"height": "20em"}} alt="fetchError"/>
                 </div>
                 :(
                   <div data-testid='coinPage' className='coinPageContainer'>
 
                     <div className="sideBar">
+                    <Button className="backButton" variant="outlined" onClick={()=>navigate('/')}>
+                          <ArrowBackIosIcon/> Back To Home
+                    </Button>
+                    
                       <img className='coinImage' src={coin?.image.large} alt={coin?.name} />
                       <Typography variant='h3' className="headingName">
                         {coin?.name}
@@ -62,13 +71,13 @@ const CoinPage = () => {
                         {parse(`${coin?.description.en.split(". ")[0]}`)}
                       </Typography>
                       <div className="marketData">
-                        <span className="coinRank">
+                        <span className="coinTag coinRank">
                           <Typography variant="h5" className="headingName">Rank: <span className="marketDataContent">{coin?.market_cap_rank}</span></Typography>
                         </span>
-                        <span className="coinPrice">
+                        <span className="coinTag coinPrice">
                           <Typography variant="h5" className="headingName">Price: <span className="marketDataContent">${coin?.market_data.current_price.aud.toLocaleString()}</span></Typography>
                         </span>
-                        <span className="coinCap">
+                        <span className="coinTag coinCap">
                           <Typography variant="h5" className="headingName">Market Cap: <span className="marketDataContent">${coin?.market_data.market_cap.aud.toLocaleString()}</span></Typography>
                         </span>
                       </div>

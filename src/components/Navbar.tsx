@@ -23,7 +23,7 @@ export default function Navbar() {
         <AppBar position="static">
             <div className='navBar'>
                 <Toolbar className='toolBar'>
-                    <div className='logo'>
+                    <div className='logo' onClick={()=>navigate('/')}>
                         <img src={logo} alt="logo" />
                     </div>
                 </Toolbar>

@@ -5,7 +5,6 @@
     display: flex;
 
     .coinImage{
-        margin-top: 5%;
         margin-bottom: 20px;
     }
     .coinDescription{
@@ -18,7 +17,16 @@
         margin-bottom: 20px;
     }
     .marketDataContent{
+        text-align: center;
         font-family: 'Montserrat', sans-serif;
+    }
+    .marketData{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .coinTag{
+        text-align: center;
     }
     @media only screen and (max-width: 900px) {
         flex-direction: column;
@@ -33,6 +41,19 @@
     align-items: center;
     margin-top: 25px;
     border-right: 2px solid grey;
+    padding: 2%;
+
+    .backButton{
+        margin-bottom: 3%;
+        border: 1px solid #AA3EFF;
+        color:#AA3EFF;
+
+        
+    }
+    .backButton:hover{
+        border:1px solid #AA3EFF;
+        background-color:rgba(170, 62, 255, 0.1);
+    }
 
     @media only screen and (max-width: 900px) {
         width: 100%

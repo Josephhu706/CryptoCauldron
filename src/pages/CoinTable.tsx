@@ -16,7 +16,8 @@ import callError from '../assets/images/call-error.svg'
 import emptySearch from '../assets/images/empty-search.svg'
 import SearchInput from '../components/SearchInput';
 import MotionWrap from '../wrapper/MotionWrap'
-
+import '../styles/CoinTableStyles.scss'
+import {useNavigate} from "react-router-dom";
 
 const darkTheme = createTheme({
   palette: {
@@ -32,6 +33,8 @@ const CoinTable = () => {
     const [error, setError] = useState<string>('')
     const [page, setPage] = useState<number>(1)
     const tableHead = ['Coin', 'Price', 'Volume', '24hr Change', 'Market Cap']
+
+    const navigate = useNavigate();
 
     useEffect(() => {
       getCoins()
@@ -60,7 +63,7 @@ const CoinTable = () => {
       <div data-testid='coinTable'>
         <ThemeProvider theme={darkTheme}>
           <CssBaseline/>
-            <Container style={{textAlign: "center"}}>
+            <Container className="tableContainer" >
               <SearchInput handleChange={handleChange} />
               <TableContainer>
                 {loading? (
@@ -75,10 +78,10 @@ const CoinTable = () => {
                 </div>
                   :
                   <Table data-testid='fetchSuccessful' >
-                    <TableHead style={{backgroundColor: "#EEBC1D"}}>
+                    <TableHead className="tableHead">
                       <TableRow>
                         {tableHead.map((head, index)=>(
-                          <TableCell align={head === "Coin" ? "left" : "right"} key={index} style={{fontWeight:"700", fontFamily: "Montserrat"}}>
+                          <TableCell align={head === "Coin" ? "left" : "right"} key={index} className="tableHeadCell">
                             {head}
                           </TableCell>
                         ))}
@@ -87,10 +90,10 @@ const CoinTable = () => {
                     <TableBody id="tableBody">
                       {filterCoins().slice((page - 1) * 10, (page - 1) * 10 + 10).map((row, index)=>{
                         return(
-                          <TableRow key={index}>
-                            <TableCell scope="row" style={{display: "flex", gap:15}}>
-                              <img src={row.image} height="50" style={{marginBottom:10}} alt={row.name}/>
-                              <div style={{display:"flex", flexDirection:"column"}}>
+                          <TableRow className="tableRow" key={index} onClick={()=>navigate(`/coins/${row.id}`)}>
+                            <TableCell scope="row" className="tableCellCoin">
+                              <img src={row.image} className="tableCoinIcon" alt={row.name}/>
+                              <div className="tableCoinContent">
                                 <span
                                   style={{
                                     textTransform:"uppercase",
@@ -131,7 +134,7 @@ const CoinTable = () => {
                 )
                 )}
                 {!error && 
-                  <Pagination data-testid='pagination' style={{padding:20, width:"100%%" , display:"flex", justifyContent:"center"}} 
+                  <Pagination data-testid='pagination' style={{padding:20, width:"100%" , display:"flex", justifyContent:"center"}} 
                   count={parseInt((filterCoins().length / 10).toFixed(0))} color="primary"
                   onChange={(event, value) => {
                     setPage(value);
