@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {fetchHistory, Timeline} from '../config/API'
+import {fetchHistory} from '../config/API'
 import CircularProgress from '@mui/material/CircularProgress'
 import callError from '../assets/images/call-error.svg'
-import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material/';
 import '../styles/CoinChartStyles.scss'
@@ -46,8 +45,6 @@ const CoinChart:React.FC<Props> = ({coin}) => {
   const [error, setError] = useState<string>('')
   const [history, setHistory] = useState<any>([])
   const [days, setDays] = useState<number>(1)
-  const coinPrice = [];
-  const coinTimestamp = [];
   const chartTimelines = [
     {
       label: "24 Hours",

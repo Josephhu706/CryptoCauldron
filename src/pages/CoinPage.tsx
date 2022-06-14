@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom'
 import React, {useEffect, useState} from 'react';
-import {fetchCoin, Coin} from '../config/API'
+import {fetchCoin} from '../config/API'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material/';
 import CoinChart from '../components/CoinChart';
@@ -22,7 +22,6 @@ const darkTheme = createTheme({
 const CoinPage = () => {
   const {id} = useParams()
   const [coin, setCoin] =useState<any>()
-  const [search, setSearch] = useState<string>('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string>('')
 
