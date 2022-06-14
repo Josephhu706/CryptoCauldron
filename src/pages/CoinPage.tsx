@@ -29,7 +29,7 @@ const CoinPage = () => {
 
   useEffect(() => {
     getCoin(id)
-    // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [])
 
   const getCoin = async (id:any)=>{
