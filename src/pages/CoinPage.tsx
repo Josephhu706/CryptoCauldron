@@ -29,6 +29,7 @@ const CoinPage = () => {
 
   useEffect(() => {
     getCoin(id)
+    // eslint-disable-line react-hooks/exhaustive-deps
   }, [])
 
   const getCoin = async (id:any)=>{
@@ -41,8 +42,6 @@ const CoinPage = () => {
     }
     setLoading(false)
   }
-
-
 
   return (
     <>

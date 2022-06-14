@@ -67,6 +67,7 @@ const CoinChart:React.FC<Props> = ({coin}) => {
 
   useEffect(() => {
     getHistory(coin, days)
+    // eslint-disable-line react-hooks/exhaustive-deps
   }, [])
 
   const getHistory = async (id:string, days:number)=>{
