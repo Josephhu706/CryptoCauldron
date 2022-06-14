@@ -67,7 +67,7 @@ const CoinChart:React.FC<Props> = ({coin}) => {
 
   useEffect(() => {
     getHistory(coin, days)
-    // // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [])
 
   const getHistory = async (id:string, days:number)=>{
