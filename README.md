@@ -42,9 +42,11 @@ The designs were created using figma (designs below) with mobile and desktop vie
 
 Given the scope of the challenge it was not necessary to implement a back end however i did actually play around with the idea of creating firebase authenticated users with individual watchlists. In the future i would like to add this to the app!
 
+
 ![Home](src/assets/images/cryptoCauldron1.png)
 ![Trending](src/assets/images/cryptoCauldron2.png)
 ![Information](src/assets/images/cryptoCauldron3.png)
+
 
 ## Lessons learnt
 
