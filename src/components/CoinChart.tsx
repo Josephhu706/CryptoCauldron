@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fetchHistory, SingleCoin } from "../config/API";
+import { fetchHistory } from "../config/API";
 import CircularProgress from "@mui/material/CircularProgress";
 import callError from "../assets/images/call-error.svg";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
