@@ -30,31 +30,47 @@ Lottie
 Jest
 React Testing Library
 Axios
+Wallaby Js
 
 ## Approach taken
 
 Planning
-This project was for a job i applied for (AND REALLY WANT TO GET) I was heavily inspired by talking to the product manager and got inspiration form a nerdy conversation about Magic The Gathering. Hence i decided to theme it around the mtg card
-![inspiration](src/assets/images/cryptoCauldron1.png)
+This project was for a job i applied for (AND REALLY WANT TO GET) I was heavily inspired by talking to the product manager and got inspiration form a nerdy conversation about Magic The Gathering. Hence i decided to theme it around the mtg card Cauldron of Souls. I really tried to put my personality and creativity into the project to present information that might be a bit confusing to newer investors in a digestible and interesting way. I wanted to create a delightful experience for users not just an informative one.
+![inspiration](src/assets/images/cryptoCauldron4.png)
 
-The designs were created by the UX team using figma (designs below) with mobile and desktop view in mind.
+The designs were created using figma (designs below) with mobile and desktop view in mind.
 
-Given the short timeframe we did not feel it was necessary to implement a full User Authetication login system with firebase so we opted to save user login data in local storage to allow them to edit their preferences.
+Given the scope of the challenge it was not necessary to implement a back end however i did actually play around with the idea of creating firebase authenticated users with individual watchlists. In the future i would like to add this to the app!
 
-![designs](src/images/FigmaDesign.jpg)
-
+![Home](src/assets/images/cryptoCauldron1.png)
+![Trending](src/assets/images/cryptoCauldron2.png)
+![Information](src/assets/images/cryptoCauldron3.png)
 
 ## Lessons learnt
 
-To communicate effectively with the UX team and share ideas and determine the scope of the project. It was important to let the designers know what features were difficult to implement in the given timeframe and what features were not.
+Job interview aside, this project was a great learning experience for me to get more practice with Typescript in react and learn Jest and the React Testing Library. I was able to write some basic tests for each componenet. I'll admit i'm not an expert on Typscript and Jest (for now) but i think i learned an incredibly large amout in a very very short amount of time (4 days). The planning definitely helped to build the app in a more structured way. 
 
-Pair programming was also very effective, especially using liveshare on VS code to simultaneously work on the project without stepping on each others toes.
+## Future improvements and challenges
 
-## Future improvements
+Implement a backend to create more functionality
 
-We could not fully implement the dashboard feature due to running out of time, this would need to be improved in the future.
+Since i'm still quite new to Typescript there were some variable types that i couldn't really wrap my head around. I know it's not really best practice to use the type of "any" when typescript complains but in some situations i just could not debug the code succesfully and had to use it as a last resort. 
 
-In the future, I would like to add/improve the following:
+I would like to get more experience writing unit tests for components. Most of my testing was to check if axios requests succeeded or failed, if navigation was sucessful and if components were renedered in the DOM. Some aspects i wanted to test but couldn't figure out a way to were:
 
-The dashboard tables are not mobile responsive and no other analytical data is displayed besides just the user information and preferences.
+Testing if the filter search input was actually working on the Home page.
+
+Testing if the chart information was dynamically updating when the timeline buttons were clicked.
+
+It was also difficult to assess if my mock data i used to test each component was accurate enough to portray the functionality of the component.
+
+Some things i tried to tackle but ultimately failed was trying to use the enzyme testing library to bring functions from my components into the test file, and then create a wrapper that would allow me to mock run the function. This didn't work however because a large portion of the enzyme testing library has been deprecated and does not work for functional components. 
+
+I do think i tested the major aspects of each component successfully to the best of my ability, being new to Jest. 
+
+
+## Conclusion
+
+Overall I had a lot of fun with the front end coding challenge and learning all the various technologies along the way. I hope my passion and creativity showed in the final product as i wanted to really put my personality into the application. I spent a lot of time and effort building this app and i hope you appreciate it! This is only one of many learning experiences on my dev journey cheers!
+
 
