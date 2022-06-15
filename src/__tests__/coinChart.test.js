@@ -47,6 +47,14 @@ test("Coin Chart should be rendered", async() => {
     waitFor(()=>{
         const chartButton = screen.findByRole('button')
         expect(chartButton).toBeInTheDocument()
+        const oneDay = screen.getByText('24 HOURS')
+        expect(oneDay).toBeInTheDocument()
+        const oneMonth = screen.getByText('30 DAYS')
+        expect(oneMonth).toBeInTheDocument()
+        const threeMonths = screen.getByText('3 MONTHS')
+        expect(threeMonths).toBeInTheDocument()
+        const oneYear= screen.getByText('1 YEAR')
+        expect(oneYear).toBeInTheDocument()
     })
   });
 

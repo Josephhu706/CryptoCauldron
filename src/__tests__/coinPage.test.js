@@ -1,6 +1,5 @@
 import { render, screen, cleanup, getByTestId, fireEvent, waitFor, getByText, act} from '@testing-library/react'
 import CoinPage from '../pages/CoinPage'
-import CoinChart from '../components/CoinChart'
 import '@testing-library/jest-dom'
 import axiosMock from 'axios'
 import renderer from 'react-test-renderer'
@@ -50,6 +49,20 @@ test("Render coin information", async () => {
         const coinName = screen.findByTestId('coinName')
         expect(coinName).toBeInTheDocument()
         expect(coinContent).toBeInTheDocument()
+    })
+});
+
+test("Render Home Button and navigate back Home", async () => {
+    axiosMock.get.mockResolvedValueOnce({data: {name: "Bitcoin", id:"bitcoin"}})
+    act(()=>render(<CoinPage/>))
+    const loading= screen.getByTestId("loading")
+    expect(loading).toBeInTheDocument();
+    expect(fetchCoin).toHaveBeenCalledTimes(1)
+    waitFor(()=>{
+        const homeButton = screen.findByText('BACK TO HOME')
+        expect(homeButton).toBeInTheDocument()
+        fireEvent.click(homeButton)
+        expect(mockedUsedNavigate).toHaveBeenCalledWith(`/`)
     })
 });
 
