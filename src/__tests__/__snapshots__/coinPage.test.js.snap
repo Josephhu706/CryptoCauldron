@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Coin page matches snapshot 1`] = `
+<div
+  data-testid="coinPage"
+>
+  <div
+    className="coinPageContainer"
+  >
+    <div
+      className="sideBar"
+      data-testid="sideBar"
+    >
+      <button
+        className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root backButton css-1vbvugf-MuiButtonBase-root-MuiButton-root"
+        data-testid="backButton"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="ArrowBackIosIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11.67 3.87 9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+          />
+        </svg>
+         Back To Home
+      </button>
+      <img
+        className="coinImage"
+      />
+      <h3
+        className="MuiTypography-root MuiTypography-h3 headingName css-gepadz-MuiTypography-root"
+        data-testid="coinName"
+      />
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle1 coinDescription css-10wpov9-MuiTypography-root"
+      />
+      <div
+        className="marketData"
+      >
+        <span
+          className="coinTag coinRank"
+        >
+          <h5
+            className="MuiTypography-root MuiTypography-h5 headingName css-ag7rrr-MuiTypography-root"
+          >
+            Rank:
+             
+            <span
+              className="marketDataContent"
+            />
+          </h5>
+        </span>
+        <span
+          className="coinTag coinPrice"
+        >
+          <h5
+            className="MuiTypography-root MuiTypography-h5 headingName css-ag7rrr-MuiTypography-root"
+          >
+            Price:
+             
+            <span
+              className="marketDataContent"
+            >
+              $
+            </span>
+          </h5>
+        </span>
+        <span
+          className="coinTag coinCap"
+        >
+          <h5
+            className="MuiTypography-root MuiTypography-h5 headingName css-ag7rrr-MuiTypography-root"
+          >
+            Market Cap:
+             
+            <span
+              className="marketDataContent"
+            >
+              $
+            </span>
+          </h5>
+        </span>
+      </div>
+    </div>
+    <div
+      className="coinChart"
+    >
+      <div
+        className="container"
+      >
+        <h1
+          className="coinHeading"
+        >
+          Coin Price Data
+        </h1>
+        <div
+          className="coinChart"
+          data-testid="coinChart"
+        >
+          <canvas
+            height={150}
+            role="img"
+            width={300}
+          />
+        </div>
+        <div
+          className="coinChartButtons"
+        >
+          <span>
+            <button
+              className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root chartButton css-1vbvugf-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              24 Hours
+            </button>
+          </span>
+          <span>
+            <button
+              className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root chartButton css-1vbvugf-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              30 Days
+            </button>
+          </span>
+          <span>
+            <button
+              className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root chartButton css-1vbvugf-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              3 Months
+            </button>
+          </span>
+          <span>
+            <button
+              className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root chartButton css-1vbvugf-MuiButtonBase-root-MuiButton-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              1 Year
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

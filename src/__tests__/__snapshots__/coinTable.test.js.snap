@@ -8,12 +8,7 @@ exports[`matches snapshot 1`] = `
     data-testid="coinTable"
   >
     <div
-      className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
-      style={
-        Object {
-          "textAlign": "center",
-        }
-      }
+      className="MuiContainer-root MuiContainer-maxWidthLg tableContainer css-1oqqzyl-MuiContainer-root"
     >
       <div>
         <div
@@ -117,7 +112,7 @@ exports[`matches snapshot 1`] = `
               "display": "flex",
               "justifyContent": "center",
               "padding": 20,
-              "width": "100%%",
+              "width": "100%",
             }
           }
         >

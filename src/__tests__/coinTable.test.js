@@ -1,4 +1,4 @@
-import { render, screen, cleanup, waitForElement, getByTestId, fireEvent, } from '@testing-library/react'
+import { render, screen, cleanup, fireEvent, waitFor,act } from '@testing-library/react'
 import CoinTable from '../pages/CoinTable'
 import '@testing-library/jest-dom'
 import axiosMock from 'axios'
@@ -12,12 +12,18 @@ afterEach(()=>{
 
 jest.mock('axios');
 
+const mockedUsedNavigate = jest.fn();
+jest.mock('react-router-dom', () => ({
+   ...jest.requireActual('react-router-dom'),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 //test if coin table component is rendered
 test("table should be rendered", () => {
     render(<CoinTable />);
     const coinTable = screen.getByTestId("coinTable");
     expect(coinTable).toBeInTheDocument()
-  });
+});
 
   //test if logo is rendered
 test("table logo should be rendered", () => {
@@ -70,25 +76,33 @@ test("Coins should be rendered after fetching", async () => {
     "last_updated": "2022-06-12T03:58:19.387Z"
     }
 ]})
+act(()=>{
   render(<CoinTable />);
+})
   const loading= screen.getByTestId("loading")
   expect(loading).toBeInTheDocument();
-  const tableContent = await screen.findByText('Bitcoin')
-  expect(tableContent).toBeInTheDocument();
+  await waitFor(()=>{
+    const tableContent = screen.getByText('Bitcoin')
+    expect(tableContent).toBeInTheDocument();
+  })
 });
 
 //test for not fetching data error screen
 test("Render Error Message if Fetch Fails", async () => {
   axiosMock.get.mockRejectedValue({data: {'error': 'error'}})
-  render(<CoinTable />);
-  const errorMsg = await screen.findByTestId('fetchError')
-  expect(errorMsg).toBeInTheDocument();
+  act(()=>{
+    render(<CoinTable />);
+  })
+  await waitFor(()=>{
+    const errorMsg = screen.getByTestId('fetchError')
+    expect(errorMsg).toBeInTheDocument();
+  })
 });
 
 
 // //test for route pagination?
 
-// //test for filtering?
+// //test for filtering? enzyme depreciated can't import methods
 // test('filtering should work', ()=>{
 //   // const coins = {content:[ {"id": "bitcoin","symbol": "btc", "name": "Bitcoin"},{"id": 'ethereum', "symbol": 'eth', "name": 'Ethereum'}]}
 //   const wrapper = shallow(<CoinTable/>);

@@ -19,18 +19,18 @@ export default function Navbar() {
       };
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box data-testid='navbar' sx={{ flexGrow: 1 }}>
         <AppBar position="static">
             <div className='navBar'>
                 <Toolbar className='toolBar'>
                     <div className='logo' onClick={()=>navigate('/')}>
-                        <img src={logo} alt="logo" />
+                        <img data-testid='logo' src={logo} alt="logo" />
                     </div>
                 </Toolbar>
                 <div className='navTabs'>
                     <Tabs onChange={handleChange} indicatorColor='secondary' textColor='inherit' value={value}>
-                        <Tab label="Home" onClick={()=>navigate('/')}/>
-                        <Tab label="Trending" onClick={()=>navigate('/trending')}/>
+                        <Tab data-testid='home' label="Home" onClick={()=>navigate('/')}/>
+                        <Tab data-testid='trending' label="Trending" onClick={()=>navigate('/trending')}/>
                     </Tabs>
                 </div>
             </div>

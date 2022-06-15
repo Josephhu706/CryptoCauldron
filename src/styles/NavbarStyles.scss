@@ -11,11 +11,12 @@
 .navBar{
     display: flex;
     justify-content: space-between;
+    background-color: #4a148c;
 }
 
 .navTabs{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     margin-right: 8%;
 }

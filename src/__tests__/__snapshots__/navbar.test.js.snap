@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="MuiBox-root css-i9gxme"
+  data-testid="navbar"
+>
+  <header
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-hip9hq-MuiPaper-root-MuiAppBar-root"
+  >
+    <div
+      className="navBar"
+    >
+      <div
+        className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular toolBar css-hyum1k-MuiToolbar-root"
+      >
+        <div
+          className="logo"
+          onClick={[Function]}
+        >
+          <img
+            alt="logo"
+            data-testid="logo"
+            src="logo.svg"
+          />
+        </div>
+      </div>
+      <div
+        className="navTabs"
+      >
+        <div
+          className="MuiTabs-root css-1ujnqem-MuiTabs-root"
+        >
+          <div
+            className="MuiTabs-scroller MuiTabs-fixed css-jpln7h-MuiTabs-scroller"
+            onScroll={[Function]}
+            style={
+              Object {
+                "marginBottom": -0,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <div
+              aria-orientation={null}
+              className="MuiTabs-flexContainer css-heg063-MuiTabs-flexContainer"
+              onKeyDown={[Function]}
+              role="tablist"
+            >
+              <button
+                aria-selected={true}
+                className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit Mui-selected css-cjctlb-MuiButtonBase-root-MuiTab-root"
+                data-testid="home"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="tab"
+                tabIndex={0}
+                type="button"
+              >
+                Home
+                <span
+                  className="MuiTabs-indicator css-11yukd5-MuiTabs-indicator"
+                  style={Object {}}
+                />
+              </button>
+              <button
+                aria-selected={false}
+                className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit css-cjctlb-MuiButtonBase-root-MuiTab-root"
+                data-testid="trending"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onDragLeave={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                role="tab"
+                tabIndex={-1}
+                type="button"
+              >
+                Trending
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;

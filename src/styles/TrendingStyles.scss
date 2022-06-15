@@ -9,6 +9,12 @@
     --white-color: #FFFFFF;
     --secondary-color-hover: #002F36;
 }
+.circlesContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .trendingTitle{
     padding-top: 3%;
     display:flex;
@@ -22,25 +28,25 @@
 
 .app__header{
     //on a large screen, show in a row
-    padding: 6rem 2rem 0;
+    padding: 6rem 0 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .app__header-circlesTop3{
-    flex: 0.75;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 100%;
-    margin-left: 1rem;
-    max-width: 960px;
     width: 100%;
-    flex-wrap: wrap;
-    margin-left: 0;
-
+    justify-content: center;
+    .circleContent{
+        display: flex;
+        justify-content: space-evenly;
+        width:50%;
+        background: none;
+        box-shadow: none;
+    }
     div{
         cursor: pointer;
         width: 100px;
@@ -98,19 +104,28 @@
         background: rgba(0,0,0,0.0);
 
     }
+
+    @media only screen and (max-width: 900px) {
+        .circleContent{
+            width:90%;
+        }
+    }
+
+
 }
 
 .app__header-circlesTop7{
-    margin-top: 4%;
-    flex: 0.75;
+    margin-top: 120px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 100%;
-    max-width: 960px;
     width: 100%;
-    flex-wrap: wrap;
-    margin-left: 0;
+    justify-content: center;
+    .circleContent{
+        display: flex;
+        justify-content: space-evenly;
+        width:50%;
+        background: none;
+        box-shadow: none;
+    }
 
     div{
         cursor: pointer;
@@ -174,19 +189,26 @@
         background: rgba(0,0,0,0.0);
 
     }
+
+    @media only screen and (max-width: 900px) {
+        .circleContent{
+            width:90%;
+        }
+    }
 }
 
 .app__header-circlesTop10{
-    margin-top: 7%;
-    flex: 0.75;
+    margin-top: 120px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 100%;
-    margin-left: 1rem;
-    max-width: 960px;
     width: 100%;
-    flex-wrap: wrap;
+    justify-content: center;
+    .circleContent{
+        display: flex;
+        justify-content: space-evenly;
+        width:50%;
+        background: none;
+        box-shadow: none;
+    }
     margin-left: 0;
 
     div{
@@ -244,6 +266,12 @@
         top:70px;
         background: rgba(0,0,0,0.0);
 
+    }
+
+    @media only screen and (max-width: 900px) {
+        .circleContent{
+            width:90%;
+        }
     }
 }
 .animation{

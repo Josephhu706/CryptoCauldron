@@ -29,6 +29,41 @@ export type Coin = {
     last_updated: string;
 }
 
+export type SingleCoin={
+additional_notices: Array<any>
+asset_platform_id: any
+block_time_in_minutes: number
+categories: Array<any>
+coingecko_rank: number
+coingecko_score: number
+community_data: any
+community_score: number
+country_origin: string
+description: any
+developer_data: any
+developer_score: number
+genesis_date: string
+hashing_algorithm: string
+id: string
+image: any
+last_updated: string
+links: any
+liquidity_score: number
+localization: any
+market_cap_rank: number
+market_data: any
+name: string
+platforms: any
+public_interest_score: number
+public_interest_stats: any
+public_notice: any
+sentiment_votes_down_percentage: number
+sentiment_votes_up_percentage: number
+status_updates: Array<any>
+symbol: string
+tickers: any
+}
+
 export type Timeline = {
     label: string,
     value: number,
@@ -55,6 +90,7 @@ export const fetchCoin = async (id:string) => {
 export const fetchHistory = async (id:string, days:number = 365) => {
     const endpoint = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=aud&days=${days}`
     const {data} = await axios.get(endpoint)
-    console.log(data)
-    return data
+    console.log(data.prices)
+    console.log('history fetched')
+    return data.prices
 }

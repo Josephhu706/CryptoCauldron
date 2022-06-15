@@ -22,7 +22,12 @@
 
 
 }
+.coinHeading{
+    @media only screen and (min-width: 900px) {
+        margin-top: 5%;
+    }
 
+}
 .coinChartButtons{
     width: 70%;
     margin-top: 2%;
@@ -37,13 +42,16 @@
         background-color:rgba(170, 62, 255, 0.1);
     }
 }
-
-.loadingProgress{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+.loadingProgressContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.loadingProgress{
+    margin: 0 auto;
+}
+
+
 .fetchError{
     display: flex;
     justify-content: center;

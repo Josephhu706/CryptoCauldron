@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  style={Object {}}
+>
+  <div
+    data-testid="trendingPage"
+  >
+    <h4
+      className="MuiTypography-root MuiTypography-h4 trendingTitle css-1s9j31j-MuiTypography-root"
+      data-testid="title"
+      style={
+        Object {
+          "fontFamily": "Montserrat",
+          "margin": 18,
+        }
+      }
+    >
+      Top 10 Trending Coins By Volume
+    </h4>
+    <div
+      className="app__header app__flex"
+      data-testid="TrendingPage"
+    >
+      <div
+        className="circlesContainer"
+      >
+        <div
+          className="app__header-circlesTop3"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(300px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="circleContent"
+          />
+        </div>
+        <div
+          className="app__header-circlesTop7"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(300px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="circleContent"
+          />
+        </div>
+        <div
+          className="app__header-circlesTop10"
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(300px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="circleContent"
+          />
+        </div>
+      </div>
+      <div
+        data-testid="animation"
+      >
+        <div
+          className="animation"
+          style={
+            Object {
+              "height": 400,
+              "width": 720,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
