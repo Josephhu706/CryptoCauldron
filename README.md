@@ -1,6 +1,6 @@
 
 ## Accessing the site
-Access the app here: [https://ux-colab.web.app/](https://app.netlify.com/sites/crypto-cauldron/overview)
+Access the app here: https://main--crypto-cauldron.netlify.app/
 
 Responsive on desktop, tablets and mobile
 
@@ -13,6 +13,7 @@ The features include:
 Homepage with crypto data table and search/filter functionality (case insensitive).
 Trending by Volume page, ranking the top 10 currently trending crypto currencies by volume.
 Individual coin pages with information specific to each coin and pricing information based on time and date.
+Custom 404 page with nagivation back to Home. 
 
 Users have the ability to do the following:
 Look up an search for coins
