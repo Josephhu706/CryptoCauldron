@@ -24,7 +24,8 @@ const CoinPage = () => {
   const [coin, setCoin] = useState<SingleCoin>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>("");
-  const [description, setDescription] = useState<string>('')
+  const [description, setDescription] = useState<string>("");
+  const [coinId, setCoinId] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -33,18 +34,18 @@ const CoinPage = () => {
     // eslint-disable-next-line
   }, []);
 
-  const getCoin = async (id: any) => {
+  const getCoin = async (id: string | undefined) => {
     setLoading(true);
     try {
       const newCoin = await fetchCoin(id);
       setCoin(newCoin);
-      setDescription(newCoin.description.en)
+      setDescription(newCoin.description.en);
+      setCoinId(newCoin.id);
     } catch (error: any) {
       setError(error);
     }
     setLoading(false);
   };
-
 
   return (
     <div data-testid="coinPage">
@@ -62,7 +63,7 @@ const CoinPage = () => {
           <div className="coinPageContainer">
             <div data-testid="sideBar" className="sideBar">
               <Button
-              data-testid="backButton"
+                data-testid="backButton"
                 className="backButton"
                 variant="outlined"
                 onClick={() => navigate("/")}
@@ -75,7 +76,11 @@ const CoinPage = () => {
                 src={coin?.image.large}
                 alt={coin?.name}
               />
-              <Typography variant="h3" data-testid="coinName" className="headingName">
+              <Typography
+                variant="h3"
+                data-testid="coinName"
+                className="headingName"
+              >
                 {coin?.name}
               </Typography>
               <Typography variant="subtitle1" className="coinDescription">
@@ -110,7 +115,7 @@ const CoinPage = () => {
             </div>
 
             <div className="coinChart">
-              <CoinChart coin={coin?.id} />
+              <CoinChart coin={coinId} />
             </div>
           </div>
         )}

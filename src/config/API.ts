@@ -80,7 +80,7 @@ export const fetchCrypto = async ()=>{
 
 }
 
-export const fetchCoin = async (id:string) => {
+export const fetchCoin = async (id:string|undefined) => {
     const endpoint = `https://api.coingecko.com/api/v3/coins/${id}`
     const {data} = await axios.get(endpoint)
     console.log(data)

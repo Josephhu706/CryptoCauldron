@@ -1,6 +1,5 @@
 export default {
-    get: jest.fn().mockRejectedValueOnce({
-        data:[]
-    })
-}
-
+  get: jest.fn().mockRejectedValueOnce({
+    data: [],
+  }),
+};

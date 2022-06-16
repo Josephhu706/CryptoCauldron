@@ -21,7 +21,7 @@ const darkTheme = createTheme({
 const Trending = () => {
   const [trending, setTrending] = useState<Coin[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string>('');
+  const [error, setError] = useState<string>("");
 
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const Trending = () => {
   return (
     <div data-testid="trendingPage">
       <Typography
-      data-testid="title"
+        data-testid="title"
         className="trendingTitle"
         color="common.white"
         variant="h4"
@@ -60,7 +60,7 @@ const Trending = () => {
           <CssBaseline />
           {loading ? (
             <CircularProgress data-testid="loading" />
-          ) : (error ? 
+          ) : error ? (
             <div data-testid="fetchError">
               <img
                 src={callError}
@@ -68,7 +68,7 @@ const Trending = () => {
                 alt="fetchError"
               />
             </div>
-           : 
+          ) : (
             <div className="circlesContainer">
               <motion.div
                 initial={{ y: 300, opacity: 0 }}
@@ -78,23 +78,23 @@ const Trending = () => {
                 className="app__header-circlesTop3"
               >
                 <div className="circleContent">
-                {trending.slice(0, 3).map((circle, index) => (
-                  <motion.div
-                  data-testid="coinCircle"
-                    onClick={() => navigate(`/coins/${circle.id}`)}
-                    whileInView={{ opacity: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.5, type: "tween" }}
-                    className="circle-cmp top3 app__flex"
-                    key={`circle-${index}`}
-                  >
-                    <div className="overlay">
-                      <h3 className="rank">{index + 1}</h3>
-                    </div>
-                    <img src={circle.image} alt="circle" />
-                    <div className="coinName">{circle.name}</div>
-                  </motion.div>
-                ))}
+                  {trending.slice(0, 3).map((circle, index) => (
+                    <motion.div
+                      data-testid="coinCircle"
+                      onClick={() => navigate(`/coins/${circle.id}`)}
+                      whileInView={{ opacity: 1 }}
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.5, type: "tween" }}
+                      className="circle-cmp top3 app__flex"
+                      key={`circle-${index}`}
+                    >
+                      <div className="overlay">
+                        <h3 className="rank">{index + 1}</h3>
+                      </div>
+                      <img src={circle.image} alt="circle" />
+                      <div className="coinName">{circle.name}</div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
               <motion.div
@@ -105,23 +105,23 @@ const Trending = () => {
                 className="app__header-circlesTop7"
               >
                 <div className="circleContent">
-                {trending.slice(3, 7).map((circle, index) => (
-                  <motion.div
-                    data-testid="coinCircle"
-                    onClick={() => navigate(`/coins/${circle.id}`)}
-                    whileInView={{ opacity: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.5, type: "tween" }}
-                    className="circle-cmp app__flex"
-                    key={`circle-${index}`}
-                  >
-                    <div className="overlay">
-                      <h3 className="rank">{index + 4}</h3>
-                    </div>
-                    <img src={circle.image} alt="circle" />
-                    <div className="coinName">{circle.name}</div>
-                  </motion.div>
-                ))}
+                  {trending.slice(3, 7).map((circle, index) => (
+                    <motion.div
+                      data-testid="coinCircle"
+                      onClick={() => navigate(`/coins/${circle.id}`)}
+                      whileInView={{ opacity: 1 }}
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.5, type: "tween" }}
+                      className="circle-cmp app__flex"
+                      key={`circle-${index}`}
+                    >
+                      <div className="overlay">
+                        <h3 className="rank">{index + 4}</h3>
+                      </div>
+                      <img src={circle.image} alt="circle" />
+                      <div className="coinName">{circle.name}</div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
               <motion.div
@@ -132,23 +132,23 @@ const Trending = () => {
                 className="app__header-circlesTop10"
               >
                 <div className="circleContent">
-                {trending.slice(7).map((circle, index) => (
-                  <motion.div
-                    data-testid="coinCircle"
-                    onClick={() => navigate(`/coins/${circle.id}`)}
-                    whileInView={{ opacity: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.5, type: "tween" }}
-                    className="circle-cmp app__flex"
-                    key={`circle-${index}`}
-                  >
-                    <div className="overlay">
-                      <h3 className="rank">{index + 8}</h3>
-                    </div>
-                    <img src={circle.image} alt="circle" />
-                    <div className="coinName">{circle.name}</div>
-                  </motion.div>
-                ))}
+                  {trending.slice(7).map((circle, index) => (
+                    <motion.div
+                      data-testid="coinCircle"
+                      onClick={() => navigate(`/coins/${circle.id}`)}
+                      whileInView={{ opacity: 1 }}
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ duration: 0.5, type: "tween" }}
+                      className="circle-cmp app__flex"
+                      key={`circle-${index}`}
+                    >
+                      <div className="overlay">
+                        <h3 className="rank">{index + 8}</h3>
+                      </div>
+                      <img src={circle.image} alt="circle" />
+                      <div className="coinName">{circle.name}</div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             </div>

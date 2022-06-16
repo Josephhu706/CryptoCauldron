@@ -36,15 +36,17 @@ const darkTheme = createTheme({
 });
 
 type Props = {
-  coin: any;
+  coin: string;
 };
 
 const CoinChart: React.FC<Props> = ({ coin }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>("");
-  const [history, setHistory] = useState<any>([]);
+  const [history, setHistory] = useState<Array<Array<number>>>([]);
   const [days, setDays] = useState<number>(1);
-  const [lineData, setLineData] = useState([]);
+  const [lineData, setLineData] = useState<Array<string>>([]);
+
+
   const chartTimelines = [
     {
       label: "24 Hours",
@@ -136,7 +138,7 @@ const CoinChart: React.FC<Props> = ({ coin }) => {
                     labels: lineData,
                     datasets: [
                       {
-                        data: history?.map((coin: any) => coin[1]),
+                        data: history?.map((coin: Array<number>) => coin[1]),
                         label: `Price ( Past ${days} Days ) in AUD`,
                         borderColor: "#EEBC1D",
                       },

@@ -16,13 +16,8 @@ exports[`matches snapshot 1`] = `
         >
           <img
             alt="logo"
+            className="searchLogo"
             src="logo.svg"
-            style={
-              Object {
-                "height": "8em",
-                "marginTop": "2em",
-              }
-            }
           />
           <h5
             className="MuiTypography-root MuiTypography-h5 css-1m67wze-MuiTypography-root"

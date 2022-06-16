@@ -1,104 +1,113 @@
-import { render, screen, cleanup, fireEvent, waitFor,act } from '@testing-library/react'
-import CoinTable from '../pages/CoinTable'
-import '@testing-library/jest-dom'
-import axiosMock from 'axios'
-import renderer from 'react-test-renderer'
-
+import {
+  render,
+  screen,
+  cleanup,
+  fireEvent,
+  waitFor,
+  act,
+} from "@testing-library/react";
+import CoinTable from "../pages/CoinTable";
+import "@testing-library/jest-dom";
+import axiosMock from "axios";
+import renderer from "react-test-renderer";
 
 // //makes sure each test is starting from the same starting point
-afterEach(()=>{
-    cleanup()
-})
+afterEach(() => {
+  cleanup();
+});
 
-jest.mock('axios');
+jest.mock("axios");
 
 const mockedUsedNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-   ...jest.requireActual('react-router-dom'),
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockedUsedNavigate,
 }));
 
 //test if coin table component is rendered
 test("table should be rendered", () => {
-    render(<CoinTable />);
-    const coinTable = screen.getByTestId("coinTable");
-    expect(coinTable).toBeInTheDocument()
+  render(<CoinTable />);
+  const coinTable = screen.getByTestId("coinTable");
+  expect(coinTable).toBeInTheDocument();
 });
 
-  //test if logo is rendered
+//test if logo is rendered
 test("table logo should be rendered", () => {
-    render(<CoinTable />);
-    const tableLogo = screen.getByTestId("tableLogo");
-    expect(tableLogo).toBeInTheDocument()
+  render(<CoinTable />);
+  const tableLogo = screen.getByTestId("tableLogo");
+  expect(tableLogo).toBeInTheDocument();
 });
 
 //test if search bar is rendered
 test("search input should be rendered", () => {
-    render(<CoinTable />);
-    const inputEl= screen.getByTestId("search");
-    expect(inputEl).toBeInTheDocument();
+  render(<CoinTable />);
+  const inputEl = screen.getByTestId("search");
+  expect(inputEl).toBeInTheDocument();
 });
 
 test("search error should be not be visible", () => {
   render(<CoinTable />);
-  const errorEl = screen.queryByTestId('emptySearch');
-  expect(errorEl).not.toBeInTheDocument()
+  const errorEl = screen.queryByTestId("emptySearch");
+  expect(errorEl).not.toBeInTheDocument();
 });
 
 //test fetching API
 test("Coins should be rendered after fetching", async () => {
-  axiosMock.get.mockResolvedValueOnce({data: [            
-    {"id": "bitcoin",
-    "symbol": "btc",
-    "name": "Bitcoin",
-    "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
-    "current_price": 39161,
-    "market_cap": 746975620874,
-    "market_cap_rank": 1,
-    "fully_diluted_valuation": 822780677096,
-    "total_volume": 37007140684,
-    "high_24h": 41702,
-    "low_24h": 38967,
-    "price_change_24h": -2356.366268313068,
-    "price_change_percentage_24h": -5.67563,
-    "market_cap_change_24h": -44140206844.06592,
-    "market_cap_change_percentage_24h": -5.57949,
-    "circulating_supply": 19065212,
-    "total_supply": 21000000,
-    "max_supply": 21000000,
-    "ath": 93482,
-    "ath_change_percentage": -57.95187,
-    "ath_date": "2021-11-10T14:24:11.849Z",
-    "atl": 72.61,
-    "atl_change_percentage": 54035.65854,
-    "atl_date": "2013-07-05T00:00:00.000Z",
-    "roi": null,
-    "last_updated": "2022-06-12T03:58:19.387Z"
-    }
-]})
-act(()=>{
-  render(<CoinTable />);
-})
-  const loading= screen.getByTestId("loading")
+  axiosMock.get.mockResolvedValueOnce({
+    data: [
+      {
+        id: "bitcoin",
+        symbol: "btc",
+        name: "Bitcoin",
+        image:
+          "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+        current_price: 39161,
+        market_cap: 746975620874,
+        market_cap_rank: 1,
+        fully_diluted_valuation: 822780677096,
+        total_volume: 37007140684,
+        high_24h: 41702,
+        low_24h: 38967,
+        price_change_24h: -2356.366268313068,
+        price_change_percentage_24h: -5.67563,
+        market_cap_change_24h: -44140206844.06592,
+        market_cap_change_percentage_24h: -5.57949,
+        circulating_supply: 19065212,
+        total_supply: 21000000,
+        max_supply: 21000000,
+        ath: 93482,
+        ath_change_percentage: -57.95187,
+        ath_date: "2021-11-10T14:24:11.849Z",
+        atl: 72.61,
+        atl_change_percentage: 54035.65854,
+        atl_date: "2013-07-05T00:00:00.000Z",
+        roi: null,
+        last_updated: "2022-06-12T03:58:19.387Z",
+      },
+    ],
+  });
+  act(() => {
+    render(<CoinTable />);
+  });
+  const loading = screen.getByTestId("loading");
   expect(loading).toBeInTheDocument();
-  await waitFor(()=>{
-    const tableContent = screen.getByText('Bitcoin')
+  await waitFor(() => {
+    const tableContent = screen.getByText("Bitcoin");
     expect(tableContent).toBeInTheDocument();
-  })
+  });
 });
 
 //test for not fetching data error screen
 test("Render Error Message if Fetch Fails", async () => {
-  axiosMock.get.mockRejectedValue({data: {'error': 'error'}})
-  act(()=>{
+  axiosMock.get.mockRejectedValue({ data: { error: "error" } });
+  act(() => {
     render(<CoinTable />);
-  })
-  await waitFor(()=>{
-    const errorMsg = screen.getByTestId('fetchError')
+  });
+  await waitFor(() => {
+    const errorMsg = screen.getByTestId("fetchError");
     expect(errorMsg).toBeInTheDocument();
-  })
+  });
 });
-
 
 // //test for route pagination?
 
@@ -118,21 +127,21 @@ test("Render Error Message if Fetch Fails", async () => {
 
 test("search input should change", () => {
   render(<CoinTable />);
-  const searchInputEl = screen.getByTestId('search').querySelector('input');
+  const searchInputEl = screen.getByTestId("search").querySelector("input");
   //we have a dummy test value
-  const testValue = 'test'
-  //if we fire an onchange vent for the input 
-  fireEvent.change(searchInputEl, {target: {value: testValue}})
+  const testValue = "test";
+  //if we fire an onchange vent for the input
+  fireEvent.change(searchInputEl, { target: { value: testValue } });
   expect(searchInputEl.value).toBe(testValue);
 });
 
 test("Pagination should be rendered", () => {
   render(<CoinTable />);
-  const pagination= screen.getByTestId("pagination");
+  const pagination = screen.getByTestId("pagination");
   expect(pagination).toBeInTheDocument();
 });
 
-test('matches snapshot', () =>{
-  const tree = renderer.create(<CoinTable/>).toJSON()
+test("matches snapshot", () => {
+  const tree = renderer.create(<CoinTable />).toJSON();
   expect(tree).toMatchSnapshot();
-})
+});
