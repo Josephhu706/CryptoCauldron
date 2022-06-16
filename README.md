@@ -13,7 +13,7 @@ The features include:
 Homepage with crypto data table and search/filter functionality (case insensitive).
 Trending by Volume page, ranking the top 10 currently trending crypto currencies by volume.
 Individual coin pages with information specific to each coin and pricing information based on time and date.
-Custom 404 page with nagivation back to Home. 
+Custom 404 page with nagivation back to Home. (not working on netlify)
 
 Users have the ability to do the following:
 Look up an search for coins
@@ -71,6 +71,7 @@ Some things i tried to tackle but ultimately failed was trying to use the enzyme
 
 I do think i tested the major aspects of each component successfully to the best of my ability, being new to Jest. 
 
+The custom 404 page does not currently work on netlify. Not too sure, why netlify seems to not pick up 404 components. It does work in a dev server but i'm not too sure how to fix it at this stage, there seems to be very little information about this in the netlify docs.
 
 ## Conclusion
 
