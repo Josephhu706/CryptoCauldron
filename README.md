@@ -1,6 +1,6 @@
 
 ## Accessing the site
-Access the app here: [https://ux-colab.web.app/](https://app.netlify.com/sites/crypto-cauldron/overview)
+Access the app here: https://crypto-cauldron.netlify.app/
 
 Responsive on desktop, tablets and mobile
 
