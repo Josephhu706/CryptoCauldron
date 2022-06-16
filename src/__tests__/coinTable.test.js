@@ -26,27 +26,27 @@ jest.mock("react-router-dom", () => ({
 
 //test if coin table component is rendered
 test("table should be rendered", () => {
-  render(<CoinTable />);
+  act(()=>{render(<CoinTable />)});
   const coinTable = screen.getByTestId("coinTable");
   expect(coinTable).toBeInTheDocument();
 });
 
 //test if logo is rendered
 test("table logo should be rendered", () => {
-  render(<CoinTable />);
+  act(()=>render(<CoinTable />));
   const tableLogo = screen.getByTestId("tableLogo");
   expect(tableLogo).toBeInTheDocument();
 });
 
 //test if search bar is rendered
 test("search input should be rendered", () => {
-  render(<CoinTable />);
+  act(()=>render(<CoinTable />));
   const inputEl = screen.getByTestId("search");
   expect(inputEl).toBeInTheDocument();
 });
 
 test("search error should be not be visible", () => {
-  render(<CoinTable />);
+  act(()=>render(<CoinTable />));
   const errorEl = screen.queryByTestId("emptySearch");
   expect(errorEl).not.toBeInTheDocument();
 });

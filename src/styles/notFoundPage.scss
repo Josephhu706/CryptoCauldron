@@ -1,0 +1,21 @@
+.notFound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    img{
+        height:50%
+
+    }
+    .backButton{
+        margin-bottom: 20px;
+        border: 1px solid #AA3EFF;
+        color:#AA3EFF;
+
+        
+    }
+    .backButton:hover{
+        border:1px solid #AA3EFF;
+        background-color:rgba(170, 62, 255, 0.1);
+    }
+}
